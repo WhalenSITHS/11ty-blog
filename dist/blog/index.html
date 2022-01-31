@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="stylesheet" href="/style/style.css">
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
      <header class="page-header">
@@ -68,5 +69,17 @@
      
   </li></ul>
 </div>
+
+    <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
