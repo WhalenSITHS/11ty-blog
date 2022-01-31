@@ -1,5 +1,6 @@
 body {
-  background-color: red;
+  background-color: #777;
+  color: white;
 }
 .img-preview {
   width: 300px;

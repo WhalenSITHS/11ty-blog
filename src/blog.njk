@@ -6,10 +6,15 @@ layout: 'base.njk'
 <div class="section container">
 <h1 class="section-title">Recent articles</h1>
 <ul>
-{%- for post in collections.post -%}
+{%- for post in collections.post | reverse -%}
   <li>
+    <article>
       <h3>{{ post.data.title }}</h3>
+      <h4>By {{post.data.author}} : {{post.data.date | postDate}}</h4>
       <img class="img-preview" src="{{post.data.image}}" alt="">
+      <a href="{{ post.url }}">Continue Readding</a>
+    </article>
+     
   </li>
 {%- endfor -%}
 </ul>
