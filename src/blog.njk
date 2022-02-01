@@ -1,21 +1,23 @@
 ---
-title: Blog
+title: What I've Been Eating
 layout: 'base.njk'
 ---
        
-<div class="section container">
-<h1 class="section-title">Recent articles</h1>
-<ul>
+<section class="section-container">
+
+<ul class="articles">
 {%- for post in collections.post | reverse -%}
-  <li>
-    <article>
-      <h3>{{ post.data.title }}</h3>
-      <h4>By {{post.data.author}} : {{post.data.date | postDate}}</h4>
+  
+    <article class="article">
+      <div class="article-text">
+        <h3 class="article-title">{{ post.data.title }}</h3>
+        <h4 class="article-author">By {{post.data.author}} : {{post.data.date | postDate}}</h4>
+        <a class="article-link" href="{{ post.url }}">Continue Reading</a>
+      </div>
+      
       <img class="img-preview" src="{{post.data.image}}" alt="">
-      <a href="{{ post.url }}">Continue Readding</a>
     </article>
-     
-  </li>
+ 
 {%- endfor -%}
 </ul>
-</div>
+</section>
